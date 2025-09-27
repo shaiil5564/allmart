@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Cart | AllMRT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .cart-page { padding: 20px 0; }
+    .cart-grid { display: grid; grid-template-columns: 1.6fr .4fr; gap: 16px; }
+    .card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:16px; }
+    .cart-row { display:grid; grid-template-columns: 72px 1fr 120px; gap:12px; padding:10px 0; border-bottom:1px solid var(--border); align-items:center; }
+    .cart-row:last-child { border-bottom:0; }
+    .cart-row img { width:72px; height:72px; object-fit:cover; border-radius:8px; border:1px solid var(--border); }
+    .qty { display:inline-flex; align-items:center; gap:6px; }
+    .qty button { width:28px; height:28px; }
+    .price-line { display:flex; justify-content:space-between; margin:6px 0; }
+    .summary .line { display:flex; justify-content:space-between; margin:6px 0; }
+    .summary .total { font-weight:700; font-size:18px; }
+    .coupon-row { display:flex; gap:8px; }
+    .coupon-row input { flex:1; padding:8px 10px; border:1px solid var(--border); border-radius:6px; }
+    @media (max-width: 900px){ .cart-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="AllMRT" class="logo" /></a>
+      <strong>Your Cart</strong>
+      <div style="margin-left:auto"></div>
+      <a class="link" href="index.html">Continue Shopping</a>
+    </div>
+  </header>
+
+  <main class="container cart-page">
+    <div class="cart-grid">
+      <section class="card">
+        <h2>Items</h2>
+        <div id="cpItems"></div>
+      </section>
+      <aside class="card summary">
+        <h2>Summary</h2>
+        <div class="coupon-row" style="margin:8px 0 12px;">
+          <input id="cpCoupon" type="text" placeholder="Enter coupon code" />
+          <button class="btn" id="cpApply">Apply</button>
+        </div>
+        <div class="line"><span>Subtotal</span><strong id="cpSubtotal">₹0</strong></div>
+        <div class="line"><span>Discount</span><strong id="cpDiscount">- ₹0</strong></div>
+        <div class="line"><span>Shipping</span><strong id="cpShipping">₹0</strong></div>
+        <div class="line total"><span>Total</span><strong id="cpTotal">₹0</strong></div>
+        <button class="btn primary" id="cpCheckout" style="width:100%; margin-top:10px;">Checkout</button>
+      </aside>
+    </div>
+  </main>
+
+  <script src="assets/js/cart.js"></script>
+</body>
+</html>

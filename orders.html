@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Orders | AllMRT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .wrap { padding: 20px 0; }
+    .card { background:#fff; border:1px solid var(--border); border-radius:12px; }
+    table { width:100%; border-collapse: collapse; }
+    th, td { padding:10px 12px; border-bottom:1px solid var(--border); text-align:left; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="AllMRT" class="logo" /></a>
+      <strong>My Orders</strong>
+      <div style="margin-left:auto"></div>
+      <a class="link" href="index.html">Home</a>
+    </div>
+  </header>
+
+  <div class="container wrap">
+    <div class="card">
+      <table>
+        <thead>
+          <tr>
+            <th>Order #</th>
+            <th>Date</th>
+            <th>Items</th>
+            <th>Total (₹)</th>
+          </tr>
+        </thead>
+        <tbody id="ordersBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="assets/js/orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Login | AllMRT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .auth-wrap { padding: 24px 0; }
+    .auth-card { max-width: 720px; margin: 0 auto; background: #fff; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .auth-head { display: flex; border-bottom: 1px solid var(--border); }
+    .auth-head button { flex: 1; padding: 12px; border: 0; cursor: pointer; background: #f8fafc; font-weight: 600; }
+    .auth-head button.active { background: #fff; color: var(--brand); border-bottom: 2px solid var(--brand); }
+    .auth-body { padding: 16px; }
+    .auth-grid { display: grid; gap: 12px; }
+    .auth-grid label { display: grid; gap: 6px; font-size: 14px; }
+    .auth-grid input, .auth-grid textarea { padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; }
+    .auth-actions { margin-top: 12px; display: flex; gap: 10px; align-items: center; }
+    .hint { color: var(--muted); font-size: 13px; }
+    .center { text-align: center; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="AllMRT" class="logo" />
+      </a>
+      <strong>User Login</strong>
+      <div style="margin-left:auto"></div>
+      <a class="link" href="index.html">Back to Home</a>
+    </div>
+  </header>
+
+  <div class="container auth-wrap">
+    <div class="auth-card">
+      <div class="auth-head">
+        <button id="tabSignup">Sign Up</button>
+        <button id="tabOtp" class="active">OTP Login</button>
+      </div>
+      <div class="auth-body">
+        <form id="formSignup" class="auth-grid hidden">
+          <label>Name
+            <input id="suName" type="text" placeholder="Your full name" required />
+          </label>
+          <label>Mobile Number
+            <input id="suMobile" type="tel" placeholder="Enter mobile number" required />
+          </label>
+          <label>Address
+            <textarea id="suAddress" rows="3" placeholder="Full address"></textarea>
+          </label>
+          <label>Password
+            <input id="suPassword" type="password" placeholder="Create a password" required />
+          </label>
+          <div class="auth-actions">
+            <button type="submit" class="btn primary">Create Account</button>
+            <span class="hint">Already have an account? Click Login above.</span>
+          </div>
+        </form>
+
+        <form id="formOtp" class="auth-grid">
+          <label>Mobile Number
+            <input id="otpMobile" type="tel" placeholder="Enter mobile number" required />
+          </label>
+          <div style="display:flex; gap:8px; align-items:center;">
+            <label style="flex:1;">OTP Code
+              <input id="otpCode" type="text" placeholder="Enter 6-digit OTP" maxlength="6" />
+            </label>
+            <button type="button" class="btn" id="sendOtpBtn">Send OTP</button>
+          </div>
+          <div class="auth-actions">
+            <button type="submit" class="btn primary">Verify & Login</button>
+            <span class="hint">For demo, OTP will be shown on screen. Expires in 5 minutes.</span>
+          </div>
+        </form>
+
+        <p id="authMsg" class="center hint" role="status"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/auth.js"></script>
+</body>
+</html>

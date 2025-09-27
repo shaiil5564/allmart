@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Product | AllMart</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .prod-wrap { padding: 18px 0; }
+    .prod-grid { display: grid; grid-template-columns: 1.1fr 1.4fr 0.9fr; gap: 20px; align-items: start; }
+    /* Left: gallery */
+    .prod-gallery { background:#fff; border:1px solid var(--border); border-radius:10px; padding:12px; display:flex; gap:12px; }
+    .vthumbs { display:flex; flex-direction: column; gap:8px; }
+    .vthumbs img { width:56px; height:56px; object-fit:contain; background:#fff; border:1px solid var(--border); border-radius:8px; padding:6px; cursor:pointer; }
+    .vthumbs img.active { outline:2px solid var(--brand); }
+    .mainimg { flex:1; display:grid; place-items:center; }
+    .mainimg img { max-width: 100%; max-height: 520px; object-fit: contain; }
+    /* Middle: details */
+    .prod-info { background:#fff; border:1px solid var(--border); border-radius:10px; padding:16px; display:grid; gap:12px; }
+    .offers { display:grid; gap:8px; grid-template-columns: repeat(2, 1fr); }
+    .offer-card { border:1px dashed var(--border); border-radius:8px; padding:10px; background:#fafafa; font-size:14px; }
+    .rating { display:flex; align-items:center; gap:8px; font-size:14px; color:#374151; }
+    .stars { color:#f59e0b; font-size:16px; line-height:1; }
+    .specs { border:1px solid var(--border); border-radius:10px; overflow:hidden; }
+    .specs table { width:100%; border-collapse: collapse; }
+    .specs th, .specs td { padding:10px 12px; text-align:left; border-bottom:1px solid var(--border); font-size:14px; }
+    .specs th { width:30%; background:#fafafa; color:#374151; }
+    .prod-actions { display:flex; gap:10px; }
+    /* Right: buy card */
+    .buy-card { background:#fff; border:1px solid var(--border); border-radius:10px; padding:14px; position:sticky; top:78px; display:grid; gap:12px; }
+    .qty-row { display:flex; align-items:center; gap:8px; }
+    .qty-row select { padding:6px 8px; }
+    @media (max-width: 1100px) { .prod-grid { grid-template-columns: 1fr 1fr; } .buy-card { position: static; } }
+    @media (max-width: 700px) { .prod-grid { grid-template-columns: 1fr; } .offers { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="AllMart" class="logo" />
+      </a>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search for products, brands and more" aria-label="Search" />
+        <button id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
+        </button>
+      </div>
+      <strong>Product Details</strong>
+      <div style="margin-left:auto"></div>
+      <a class="link" href="index.html">Home</a>
+    </div>
+  </header>
+
+  <div class="container prod-wrap">
+    <a href="javascript:history.back()" class="link">← Back</a>
+    <div class="prod-grid" id="prodRoot">
+      <!-- Filled by product.js -->
+    </div>
+    
+    <!-- Feature highlights strip -->
+    <div id="prodHighlights" class="product-section">
+      <div class="section-head"><h2>Why shop at AllMart</h2></div>
+      <div class="brand-row">
+        <span class="brand-chip">Free Delivery</span>
+        <span class="brand-chip">Secure Payments</span>
+        <span class="brand-chip">Easy Returns</span>
+        <span class="brand-chip">Best Price</span>
+        <span class="brand-chip">Top Brands</span>
+      </div>
+    </div>
+
+    <!-- Related products -->
+    <section id="relatedSec" class="product-section hidden">
+      <div class="section-head">
+        <h2>Related Products</h2>
+        <a id="relatedViewAll" class="link" href="#">View all</a>
+      </div>
+      <div id="relatedGrid" class="product-grid"></div>
+    </section>
+  </div>
+
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/product.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Profile | AllMRT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .wrap { padding: 20px 0; }
+    .card { max-width: 720px; margin: 0 auto; background:transparent; border:0; border-radius:12px; padding:16px; }
+    .grid { display:grid; gap:12px; }
+    .grid label { display:grid; gap:6px; font-size:14px; }
+    .grid input, .grid textarea { padding:10px 12px; border:1px solid var(--border); border-radius:8px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="assets/img/logo.svg" alt="AllMRT" class="logo" /></a>
+      <strong>My Profile</strong>
+      <div style="margin-left:auto"></div>
+      <a class="link" href="index.html">Home</a>
+    </div>
+  </header>
+
+  <div class="container wrap">
+    <div class="card">
+      <div style="display:flex; gap:16px; align-items:center; margin-bottom:12px;">
+        <img id="pAvatarPreview" src="" alt="Avatar" style="width:72px; height:72px; border-radius:50%; object-fit:cover; border:1px solid var(--border); background:#f8fafc;">
+        <div>
+          <label class="btn" style="cursor:pointer; display:inline-block;">
+            <input id="pAvatar" type="file" accept="image/*" style="display:none;" />
+            Upload Photo
+          </label>
+          <div class="hint" style="color:var(--muted); font-size:12px;">JPG/PNG, recommended square image. Stored locally.</div>
+        </div>
+      </div>
+      <div class="grid">
+        <label>Name
+          <input id="pName" type="text" />
+        </label>
+        <label>Mobile
+          <input id="pMobile" type="tel" disabled />
+        </label>
+        <label>Address
+          <textarea id="pAddress" rows="3"></textarea>
+        </label>
+      </div>
+      <div style="margin-top:12px; display:flex; gap:10px;">
+        <button class="btn primary" id="saveProfile">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/profile.js"></script>
+</body>
+</html>

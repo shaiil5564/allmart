@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Category | AllMRT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <style>
+    .cat-wrap { padding: 18px 0; }
+    .cat-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+    .filters { display:flex; gap:8px; align-items:center; }
+    .filters select { padding:8px 10px; border:1px solid var(--border); border-radius:6px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/img/logo.svg" alt="AllMRT" class="logo" />
+      </a>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search for products, brands and more" aria-label="Search" />
+        <button id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
+        </button>
+      </div>
+      <strong id="catTitle">Category</strong>
+      <div style="margin-left:auto"></div>
+      <a class="link" href="index.html">Home</a>
+    </div>
+  </header>
+
+  <div class="container cat-wrap">
+    <div class="cat-head">
+      <h2 id="catHeading" style="margin:0;">Category</h2>
+      <div class="filters">
+        <label>
+          <select id="sortBy">
+            <option value="pop">Sort: Popular</option>
+            <option value="lh">Price: Low to High</option>
+            <option value="hl">Price: High to Low</option>
+            <option value="off">Discount</option>
+          </select>
+        </label>
+      </div>
+    </div>
+    <div class="brand-row" id="brandChips"></div>
+    <div class="product-grid" id="catGrid"></div>
+  </div>
+
+  <script src="assets/js/search.js"></script>
+  <script src="assets/js/category.js"></script>
+</body>
+</html>

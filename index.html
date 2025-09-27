@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>AllMart - Shop Everything Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <img src="assets/img/logo.svg" alt="AllMart" class="logo" />
+      </a>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search for products, brands and more" aria-label="Search" />
+        <button id="searchBtn" aria-label="Search">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
+        </button>
+      </div>
+      <nav class="header-actions">
+        <a class="btn outline" id="loginBtn" href="login.html">Login</a>
+        <div class="more hidden" id="userMenu">
+          <button class="link" id="userMenuBtn">Hi ▾</button>
+          <div class="dropdown">
+            <a href="profile.html">Profile</a>
+            <a href="orders.html">My Orders</a>
+            <a href="#" id="logoutLink">Logout</a>
+          </div>
+        </div>
+        <div class="more">
+          <button class="link">More ▾</button>
+          <div class="dropdown">
+            <a href="#">Notification Preferences</a>
+            <a href="#">24x7 Customer Care</a>
+            <a href="#">Advertise</a>
+            <a href="#">Download App</a>
+          </div>
+        </div>
+        <button class="cart" id="cartBtn" aria-label="Cart">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M7 4h-2l-1 2h2l3.6 7.59-1.35 2.45A1.992 1.992 0 0010 19h10v-2H10.42a.25.25 0 01-.22-.37L11 14h7.55a2 2 0 001.92-1.45l1.53-5.41A1 1 0 0021 6H6.21l-.94-2zM7 20a2 2 0 100 4 2 2 0 000-4zm10 0a2 2 0 100 4 2 2 0 000-4z"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Categories Row -->
+  <section class="categories container">
+    <a class="category" href="category.html?cat=bags"><img src="assets/img/cat-bag.svg" alt="Bags icon"/> <span>Bags</span></a>
+    <a class="category" href="category.html?cat=clothing"><img src="assets/img/cat-clothing.svg" alt="Clothing icon"/> <span>Clothing</span></a>
+    <a class="category" href="category.html?cat=footwear"><img src="assets/img/cat-footwear.svg" alt="Footwear icon"/> <span>Footwear</span></a>
+  </section>
+
+  <!-- Banner Carousel -->
+  <section class="banner container">
+    <div class="carousel" id="bannerCarousel">
+      <div class="slides">
+        <a class="slide" href="#"><img src="https://picsum.photos/seed/deal1/1600/400" alt="Big Deals" /></a>
+        <a class="slide" href="#"><img src="https://picsum.photos/seed/deal2/1600/400" alt="Festive Offers" /></a>
+        <a class="slide" href="#"><img src="https://picsum.photos/seed/deal3/1600/400" alt="New Arrivals" /></a>
+      </div>
+      <button class="nav prev" aria-label="Previous">‹</button>
+      <button class="nav next" aria-label="Next">›</button>
+      <div class="dots" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <!-- Product Sections -->
+  <main class="container">
+    <section class="product-section hidden" data-section="search">
+      <div class="section-head">
+        <h2>Search Results</h2>
+        <a href="#" class="link" id="clearSearch">Clear</a>
+      </div>
+      <div class="product-grid" id="grid-search"></div>
+    </section>
+
+    <section class="product-section" data-section="bags">
+      <div class="section-head">
+        <h2>Bags</h2>
+        <a href="category.html?cat=bags" class="link">View All</a>
+      </div>
+      <div class="product-grid" id="grid-bags"></div>
+    </section>
+
+    <section class="product-section" data-section="clothing">
+      <div class="section-head">
+        <h2>Clothing</h2>
+        <a href="category.html?cat=clothing" class="link">View All</a>
+      </div>
+      <div class="product-grid" id="grid-clothing"></div>
+    </section>
+
+    <section class="product-section" data-section="footwear">
+      <div class="section-head">
+        <h2>Footwear</h2>
+        <a href="category.html?cat=footwear" class="link">View All</a>
+      </div>
+      <div class="product-grid" id="grid-footwear"></div>
+    </section>
+  </main>
+
+  <!-- Mini Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button id="closeCart" aria-label="Close">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <button class="btn primary" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="index.html">Search Products</a>
+        <a href="#">My Orders</a>
+        <a href="#">Profile</a>
+      </div>
+      <div>
+        <h4>Customer Support</h4>
+        <a href="tel:+919060811079">📞 +91 90608 11079</a>
+        <a href="mailto:shaiils397@gmail.com">✉️ shaiils397@gmail.com</a>
+        <a href="https://wa.me/919060811079" target="_blank" rel="noopener">💬 WhatsApp Chat</a>
+        <a href="#">❓ Help Center</a>
+      </div>
+      <div>
+        <h4>Registered Office</h4>
+        <address style="font-style: normal; color: #cbd5e1;">
+          AllMart Internet Private Limited<br/>
+          Building Haweli in Bhiar Village<br/>
+          Jhitki, Bokhara Subdivision<br/>
+          Sitamarhi District<br/>
+          Bihar - 843318, India
+        </address>
+      </div>
+      <div>
+        <h4>Follow Us</h4>
+        <a href="#">📷 Instagram</a>
+        <a href="#">📘 Facebook</a>
+        <a href="#">📺 YouTube</a>
+        <a href="#">💼 LinkedIn</a>
+        <a href="#">❌ X (Twitter)</a>
+        <a href="#">💬 WhatsApp Group</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> AllMart
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
